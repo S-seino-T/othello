@@ -1,22 +1,23 @@
-# C++でオセロ作ってみた
+# Make an othello in C++
 
-## ビルド、実行方法
-1. `build`フォルダを作成
-2. `cmake -S . -B build`と打つ
-3. `cmake --build build`と打つ
+## How to build, execute
+1. create `build`folder
+2. type `cmake -S . -B build`
+3. type `cmake --build build`
 
-## 座標の入力形式
-例）5行3列目の座標を参照したい場合$\rightarrow$`53`
+## format of input
+例）the row is 5, the column is 3$\rightarrow$`53`
 
-## 改善（予定）点
+## points of be improved
 - 4/22
-  - エラーハンドリング
-    - 4/23 対応
-  - 入力形式
-  - AI搭載
-  - ログを取れるようにする
+  - error handling
+    - 4/23
+  - format of input
+  - AI option
+    - 4/25
+  - catch the log
 
 
-## 参考文献
+## References
 - https://uguisu.skr.jp/othello/5-1.html
 - 
