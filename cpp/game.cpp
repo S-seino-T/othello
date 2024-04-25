@@ -48,13 +48,116 @@ bool game::Initialize()
         }
         else if(input=="2")
         {
+            while(true)
+            {
+                cout<<"難易度 1:易 2:普"<<endl<<"> ";
+                cin>>input;
+                if(input=="1")
+                {
+                    p2=make_unique<random_enemy>(tmp.opponent(t));
+                    break;
+                }
+                else if(input=="2")
+                {
+                    p2=make_unique<once_ahead_enemy>(tmp.opponent(t));
+                    break;
+                }
+                else if(input=="E")
+                {
+                    cout<<"ShutDown"<<endl;
+                    return false;
+                }
+                else
+                {
+                    cout<<"Invalid Input."<<endl;
+                }
+            }
             p1=make_unique<player>(t);
-            p2=make_unique<random_enemy>(tmp.opponent(t));
         }
         else if(input=="3")
         {
-            p1=make_unique<random_enemy>(t);
-            p2=make_unique<random_enemy>(tmp.opponent(t));
+            //p1=make_unique<random_enemy>(t);
+            //p2=make_unique<random_enemy>(tmp.opponent(t));
+            while(true)
+            {
+                cout<<"p1 難易度 1:易 2:普 3:難"<<endl;
+                if(t==desc::black)
+                {
+                    cout<<"黒 > "<<flush;
+                }
+                else
+                {
+                    cout<<"白 > "<<flush;
+                }
+                cin>>input;
+
+                if(input=="1")
+                {
+                    p1=make_unique<random_enemy>(t);
+                    break;
+                }
+                else if(input=="2")
+                {
+                    p1=make_unique<once_ahead_enemy>(t);
+                    break;
+                }
+                else if(input=="3")
+                {
+                    p1=make_unique<negamax_enemy>(t);
+                    break;
+                }
+                else if(input=="E")
+                {
+                    cout<<"ShutDown"<<endl;
+                    return false;
+                }
+                else
+                {
+                    cout<<"Invalid Input."<<endl;
+                }
+            }
+            while(true)
+            {
+                cout<<"p2 難易度 1:易 2:普 3:難"<<endl;
+                if(t==desc::black)
+                {
+                    cout<<"白 > "<<flush;
+                }
+                else
+                {
+                    cout<<"黒 > "<<flush;
+                }
+                cin>>input;
+                if(input=="1")
+                {
+                    p2=make_unique<random_enemy>(tmp.opponent(t));
+                    break;
+                }
+                else if(input=="2")
+                {
+                    p2=make_unique<once_ahead_enemy>(tmp.opponent(t));
+                    break;
+                }
+                else if(input=="3")
+                {
+                    p2=make_unique<negamax_enemy>(tmp.opponent(t));
+                    break;
+                }
+                else if(input=="E")
+                {
+                    cout<<"ShutDown"<<endl;
+                    return false;
+                }
+                else
+                {
+                    cout<<"Invalid Input."<<endl;
+                }
+            }
+        }
+        else if(input=="4")
+        {
+            p1=make_unique<player>(t);
+            p2=make_unique<once_ahead_enemy>(tmp.opponent(t));
         }
         else if(input=="E")
         {

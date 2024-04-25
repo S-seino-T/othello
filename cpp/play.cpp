@@ -50,13 +50,32 @@ random_enemy::random_enemy(desc d)
 co player::put_desc(shared_ptr<board> b)
 {
     string input;
-    regex re{R"(\(|\)|,|\\t| |)"};
-    cout<<"座標(row, column):"<<flush;
-    cin>>input;
-    // string c = regex_replace(input,re,"");
-    string c=input;
-    cout<<c<<endl;
-    int num = stoi(c);
+    regex re{R"(\(|\)|,|\t| |)"};
+    int num = 0;
+
+    while(true)
+    {
+        cout<<"座標(row, column):"<<flush;
+        cin>>input;
+        // string c = regex_replace(input,re,"");
+        string c=input;
+        cout<<c<<endl;
+        
+        try
+        {
+            num=stoi(c);
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << "数字を入力してね"<<endl;
+            continue;
+        }
+        if(num>=0 && num<=77)
+        {
+            break;
+        }
+        std::cout<<"座標を入力してね：(0, 0) ~ (7, 7)"<<endl;
+    }
     
     co ret;
     ret.row = num/10;

@@ -2,11 +2,12 @@
 #include "util.hpp"
 #include "board.hpp"
 #include "play.hpp"
+#include "AI.hpp"
 
 class game
 {
     shared_ptr<board> now_board;
-    vector<tuple<shared_ptr<board>,desc>> log;
+    vector<tuple<board,desc>> log;
     desc p;
     shared_ptr<play> p1;
     shared_ptr<play> p2;

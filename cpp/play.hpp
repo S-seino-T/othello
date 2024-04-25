@@ -15,7 +15,6 @@ public:
 class play
 {
     const desc m_desc;
-
 public:
     play(desc);
     virtual ~play();
@@ -37,3 +36,4 @@ public:
     random_enemy(desc d);
     co put_desc(shared_ptr<board>) override;
 };
+

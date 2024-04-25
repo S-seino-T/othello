@@ -43,6 +43,7 @@ desc board::get_desc(int row, int column) const
 void board::print() const
 {
     // system("clear");
+    cout<<endl;
     cout<<" | 0 1 2 3 4 5 6 7 | "<<endl;
     cout<<"-+-----------------+-"<<endl;
     for(int i=0;i<8;++i)
@@ -72,6 +73,7 @@ void board::print() const
 void board::print_placeable(desc player) const
 {
     // system("clear");
+    cout<<endl;
     cout<<" | 0 1 2 3 4 5 6 7 | "<<endl;
     cout<<"-+-----------------+-"<<endl;
     for(int i=0;i<8;++i)
